@@ -3,7 +3,7 @@ package com.tammy.ourpage.controller;
 import com.tammy.ourpage.model.Blog;
 import com.tammy.ourpage.model.User;
 import com.tammy.ourpage.service.BlogService;
-import com.tammy.ourpage.service.RegisterService;
+import com.tammy.ourpage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
 
     @Autowired
-    private RegisterService registerService;
+    private UserService userService;
 
     @Autowired
     private BlogService blogService;
@@ -30,7 +30,7 @@ public class HelloController {
         User user=new User();
         user.setName(name);
         user.setPassword(password);
-        registerService.insert(user);
+        userService.insert(user);
         return "success";
     }
 

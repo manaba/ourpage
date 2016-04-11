@@ -1,16 +1,19 @@
 package com.tammy.ourpage.service;
 
-import com.tammy.ourpage.dao.RegisterDao;
+import com.tammy.ourpage.dao.UserMapper;
 import com.tammy.ourpage.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Created by tammy on 16/4/12.
+ */
 @Service
-public class RegisterService {
+public class UserService {
     @Autowired
-    private RegisterDao registerDao;
+    private UserMapper userMapper;
 
     public void insert(User user){
-        registerDao.insert(user);
+        userMapper.insert(user);
     }
 }
