@@ -1,6 +1,8 @@
 package com.tammy.ourpage.controller;
 
+import com.tammy.ourpage.model.Blog;
 import com.tammy.ourpage.model.User;
+import com.tammy.ourpage.service.BlogService;
 import com.tammy.ourpage.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,9 @@ public class HelloController {
 
     @Autowired
     private RegisterService registerService;
+
+    @Autowired
+    private BlogService blogService;
 
     @RequestMapping(value={"/register"},method = RequestMethod.GET)
     public String registerGet(){
@@ -28,5 +33,17 @@ public class HelloController {
         registerService.insert(user);
         return "success";
     }
+
+    @RequestMapping(value={"/testBlog"},method = RequestMethod.POST)
+    @ResponseBody
+    public String testBlogPost(String title,String content) {
+        Blog blog=new Blog();
+        blog.setTitle(title);
+        blog.setContent(content);
+        blogService.insert(blog);
+        return "success";
+    }
+
+
 
 }

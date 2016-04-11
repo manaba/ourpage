@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tammy.ourpage.dao.BlogDao">
+
+	<insert id="insert" parameterType="com.tammy.ourpage.model.Blog" >
+	    insert into blog(title, content, typeID, thumbCount, readCount, prefID, nextID, time, isTop, privacy) values(#{title},#{content}, #{typeID}, #{thumbCount}, #{readCount}, #{prefID}, #{nextID}, #{time}, #{isTop}, #{privacy})
+	</insert>
+</mapper>
