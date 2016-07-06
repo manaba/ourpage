@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <!-- Place inside the <head> of your HTML -->
+    <link rel="stylesheet" href="static/plugins/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="static/plugins/kindeditor/plugins/code/prettify.css" />
+    <script src="static/plugins/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" src="static/plugins/kindeditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" src="static/plugins/kindeditor/plugins/code/prettify.js"></script>
+
+    <script>
+        KindEditor.ready(function(K) {
+            window.editor = K.create('#editor_id',{
+                cssPath : 'static/plugins/kindeditor/plugins/code/prettify.css',
+                uploadJson : '/upload',
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Place this in the body of the page content -->
+    <textarea id="editor_id" name="content" cols="100" rows="8"></textarea>
+</body>
+</html>

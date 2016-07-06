@@ -16,4 +16,12 @@ public class UserService {
     public void insert(User user){
         userMapper.insert(user);
     }
+
+    public User selectByEmailAndPswd(String email,String password){
+        return userMapper.selectByEmailAndPswd(email,password);
+    }
+
+    public User selectByID(Integer id){
+        return  userMapper.selectByPrimaryKey(id);
+    }
 }

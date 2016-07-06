@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="static/plugins/wangEditor-2.1.5/dist/css/wangEditor.min.css"/>
+    <title></title>
+</head>
+<body>
+    <div id="div1">
+        <p>请输入内容...</p>
+    </div>
+    <script type="text/javascript" src="static/plugins/wangEditor-2.1.5/dist/js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="static/plugins/wangEditor-2.1.5/dist/js/wangEditor.min.js"></script>
+    <!--这里引用jquery和wangEditor.js-->
+    <script type="text/javascript">
+        var editor = new wangEditor('div1');
+
+        // 上传图片（举例）
+        editor.config.uploadImgUrl = '/upload';
+
+        editor.create();
+    </script>
+</body>
+</html>
+

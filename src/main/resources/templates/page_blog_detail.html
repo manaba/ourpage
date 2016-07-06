@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title1</title>
+    <!-- Place inside the <head> of your HTML -->
+    <link rel="stylesheet" href="static/plugins/bootstrap/css/bootstrap.min.css"/>
+
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="static/plugins/jquery/jquery-2.2.3.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="static/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <style>
+
+        /*whole*/
+        h1{
+            font-size: 25px;
+            color: #d6d6d6;
+            margin:0px;
+        }
+
+        h5{
+            font-size: 16px;
+        }
+
+        .hr{
+            width: 100%;
+            height: 1px;
+            margin: 10px auto;
+            background: #909090;
+        }
+
+        a{
+            text-decoration: none;
+            color: #d6d6d6;
+        }
+
+        a:hover{
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .remove-round{
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+
+
+
+        .main-wrapper{
+            background: #444 url(static/img/banner.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+
+        }
+
+        .content-wrapper{
+            height: auto;
+            width: 90%;
+            margin: 0px auto;
+        }
+
+        .blog-wrapper{
+            width: 100%;
+            background-color: rgba(0,0,0,0.6);
+            margin-bottom: 20px;
+            padding: 20px;
+            color: #d6d6d6;
+            text-align: left;
+            position: relative;
+        }
+
+        .content-wrapper .control-label{
+            text-align: left;
+        }
+
+
+        /*.upload-file input {*/
+        /*position: absolute;*/
+        /*font-size: 30px;*/
+        /*right: 0px;*/
+        /*top: 0;*/
+        /*opacity: 0;*/
+        /*width: 200px;*/
+        /*}*/
+
+        .submit-buttons{
+            width: auto;
+            text-align: center;
+        }
+
+        .submit-buttons button{
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 0px auto;
+        }
+
+        /*comment part*/
+        .comments-wrapper{
+            width: 100%;
+            background-color: rgba(0,0,0,0.6);
+            margin-bottom: 20px;
+            padding: 20px;
+            color: #d6d6d6;
+            text-align: left;
+            position: relative;
+        }
+
+        .comments-wrapper .hr{
+            margin: 0px auto;
+        }
+
+        .comment-editor{
+            text-align: right;
+        }
+
+        .img-avatar{
+            width: 80px;
+            height: 80px;
+        }
+
+        .comment-editor .btn-submit{
+            margin-top: 10px;
+        }
+
+        .lbl-count-comment{
+            margin-top: 10px;
+        }
+
+        .comments-list{
+            background-color: rgba(14, 14, 14, 0.65);
+            height: auto;
+        }
+
+        .comments-list .hr{
+           background-color: #0f0f0f;
+        }
+
+        .comment{
+            padding: 10px;
+        }
+
+        .comment .img-avatar{
+            width: 50px;
+            height: 50px;
+        }
+
+        .comment .comment-date{
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            color: #868686;
+            font-size: 13px;
+        }
+
+        .comment .comment-user{
+            color: #868686;
+        }
+
+        .comment-reply,.comment-thumb,.comment-share{
+            color: #868686;
+            font-size: 13px;
+        }
+
+
+
+
+
+
+        /* footer */
+        footer
+        {
+            background: #333;
+            color: #ffffff;
+            min-height: 150px;
+            text-align: center;
+            background: rgba(0,0,0,0.9);
+            font-size: 17px;
+        }
+
+        .copy
+        {
+            padding-bottom: 20px;
+        }
+
+        .share-group
+        {
+            display: block;
+            width: 1080px;
+            margin: 0px auto;
+            padding:50px;
+        }
+
+        .share-group li
+        {
+            display: inline-block;
+            padding: 10px;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+<div class="main-wrapper">
+    <nav class="navbar  navbar-inverse remove-round">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Manaba</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--<ul class="nav navbar-nav">-->
+                <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
+                <!--<li><a href="#">Link</a></li>-->
+                <!--<li class="dropdown">-->
+                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li><a href="#">One more separated link</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control remove-round" placeholder="Search"/>
+                    </div>
+                    <button type="submit" class="btn btn-default remove-round">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                    <!--<li><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Another action</a></li>-->
+                    <!--<li><a href="#">Something else here</a></li>-->
+                    <!--<li role="separator" class="divider"></li>-->
+                    <!--<li><a href="#">Separated link</a></li>-->
+                    <!--</ul>-->
+                    <!--</li>-->
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="content-wrapper">
+        <div class="blog-wrapper">
+            <h1 th:text="${blog.title}">Title</h1>
+            <div class="hr"></div>
+            <div class="bolg-content">
+                <h5 class="blog-info">
+                    <a href="#"><span th:text="${blog.typeName}">生活</span></a>&nbsp;
+                    <span th:text="${#dates.format(blog.time, 'yyyy-MM-dd HH:mm')}">2016-06-30 16:00</span>&nbsp;
+                    <span th:text="'阅读量: '+${blog.readCount}">阅读量:201</span>
+                </h5>
+                <h5 class="tags">
+                    <span class="glyphicon glyphicon-tags"></span>&nbsp;
+                    <a class="tag-link" href="#" th:each="tag: ${blog.tags}">
+                        <span th:switch="${tag.idtag}%4">
+                            <span  th:case="0" class="label label-warning" th:text="${tag.tname}">标签1</span>
+                            <span  th:case="1" class="label label-primary" th:text="${tag.tname}">标签1</span>
+                            <span  th:case="2" class="label label-default" th:text="${tag.tname}">标签1</span>
+                            <span  th:case="3" class="label label-success" th:text="${tag.tname}">标签1</span>
+                        </span>
+                    </a>
+                </h5>
+                <br/>
+                <div th:utext="${blog.content}">
+                    dasdadadadasa
+                    dadadadadad
+                </div>
+            </div>
+        </div>
+        <div class="comments-wrapper">
+            <div class="comment-editor">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object img-avatar" src="static/img/pic01.jpg" alt="..."/>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <textarea placeholder="enter your comment" class="form-control col-md-9" rows="5"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-default btn-submit" id="btn-submit">提交</button>
+            </div>
+
+            <label class="lbl-count-comment">5条评论</label>
+            <div class="hr"></div>
+            <div class="comments-list">
+                <div class="comment">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object img-avatar" src="static/img/pic01.jpg" alt="..."/>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <p class="comment-user">Tammy</p>
+                        <p class="comment-content">dadwadwa adw this is a comment.</p>
+                        <span class="comment-date">2015-10-05 16:06:45</span>
+                        <span style="margin-left: 10px">
+                            <a class="comment-reply">评论</a>
+                            <a class="comment-thumb">点赞</a>
+                            <a class="comment-share">分享</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div class="comment">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object img-avatar" src="static/img/pic01.jpg" alt="..."/>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <p class="comment-user">Tammy</p>
+                        <p class="comment-content">dadwadwa adw this is a comment.</p>
+                        <span class="comment-date">2015-10-05 16:06:45</span>
+                        <span style="margin-left: 10px">
+                            <a class="comment-reply">评论</a>
+                            <a class="comment-thumb">点赞</a>
+                            <a class="comment-share">分享</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div class="comment">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object img-avatar" src="static/img/pic01.jpg" alt="..."/>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <p class="comment-user">Tammy</p>
+                        <p class="comment-content">dadwadwa adw this is a comment.</p>
+                        <span class="comment-date">2015-10-05 16:06:45</span>
+                        <span style="margin-left: 10px">
+                            <a class="comment-reply">评论</a>
+                            <a class="comment-thumb">点赞</a>
+                            <a class="comment-share">分享</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <ul class="share-group">
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+        </ul>
+        <div class="copy">
+            &copy;我们 - 2016
+        </div>
+    </footer>
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+</div>
+</body>
+</html>
